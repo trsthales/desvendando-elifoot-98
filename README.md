@@ -35,6 +35,8 @@ Um mergulho técnico no código-fonte nativo do clássico **Elifoot 98** (versã
 
 ## 🔍 1. A Estrutura do Jogador na Memória
 
+![Estrutura do Jogador na Memória](img/hex_player_struct.png)
+
 Ao inspecionar a memória viva do jogo (`DS = 0x8484`), identificamos que cada jogador ocupa uma `struct` contígua de apenas **~32 a 48 bytes**. 
 
 Não existem atributos ocultos como "fôlego", "drible", "passe" ou "potencial secreto". O jogador é composto unicamente por:
@@ -84,6 +86,8 @@ $$\text{Poder do Setor} = \sum_{\text{Titulares}} \Big( (\text{Força} \times 2)
 
 ## ⏱️ 3. O Motor de Simulação de Partidas e Gols
 
+![Motor de Simulação de Partidas](img/ghidra_match_loop.png)
+
 Funções descompiladas: **`FUN_3e3c_069b`**, **`FUN_17fb_a6eb`**, **`FUN_17fb_46df`** e **`FUN_17fb_c1bf`**
 
 O relógio avança minuto a minuto de 1 a 90 (`[puVar8 + 0x18e] = minuto + 1`). A cada minuto, o jogo executa o seguinte pipeline:
@@ -107,6 +111,8 @@ A jogada acessa a matriz de desfechos:
 * `2` $\rightarrow$ **`"Ao poste"`** (Bola na trave vertical)
 * `3` $\rightarrow$ **`" barra"`** (Bola no travessão)
 * `4` $\rightarrow$ **`"Para fora"`**
+
+![Tabela de Desfechos de Gol](img/ghidra_outcome_table.png)
 
 ---
 
