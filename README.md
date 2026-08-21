@@ -102,7 +102,7 @@ O relógio avança minuto a minuto de 1 a 90 (`[puVar8 + 0x18e] = minuto + 1`). 
 
 ### 3.3. Duelo Tático (`FUN_17fb_81ed`)
 O atacante sorteado disputa o lance contra a defesa:
-$\text{Duelo} = \text{Random}(\text{Força\_Atacante}) \text{ vs } \text{Random}(\text{Força\_Defensor})$
+$\text{Duelo} = \text{Random}(\text{ForçaAtacante}) \text{ vs } \text{Random}(\text{ForçaDefensor})$
 
 ### 3.4. Resolução da Finalização (`FUN_17fb_c1bf`)
 A jogada acessa a matriz de desfechos:
